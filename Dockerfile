@@ -10,7 +10,7 @@ ADD . /go/src/github.com/devtron-labs/devtron/
 RUN GOOS=linux make build-all
 
 # uncomment this post build arg
-FROM alpine:3.15.0 as  devtron-all
+FROM alpine:3.15.0@sha256:21a3deaa0d32a8057914f36584b5288d2e5ecc984380bc0118285c70fa8c9300 as  devtron-all
 RUN apk add --no-cache ca-certificates
 RUN apk update
 RUN apk add git
