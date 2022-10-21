@@ -1,6 +1,6 @@
 ################################# Build Container ###############################
 
-FROM golang:1.16 as builder
+FROM golang:1.16@sha256:5f6a4662de3efc6d6bb812d02e9de3d8698eea16b8eb7281f03e6f3e8383018e as builder
 
 # Setup the working directory
 WORKDIR /app
