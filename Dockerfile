@@ -1,4 +1,4 @@
-FROM golang:1.18-alpine3.14  AS build-env
+FROM golang:1.18-alpine3.14@sha256:70ba8ec1a0e26a828c802c76ecfc65d1efe15f3cc04d579747fd6b0b23e1cea5  AS build-env
 
 RUN echo $GOPATH
 
@@ -10,7 +10,7 @@ ADD . /go/src/github.com/devtron-labs/devtron/
 RUN GOOS=linux make build-all
 
 # uncomment this post build arg
-FROM alpine:3.15.0 as  devtron-all
+FROM alpine:3.15.0@sha256:21a3deaa0d32a8057914f36584b5288d2e5ecc984380bc0118285c70fa8c9300 as  devtron-all
 RUN apk add --no-cache ca-certificates
 RUN apk update
 RUN apk add git
