@@ -1,7 +1,7 @@
 ###### BUILD ENVIRONMENT ######
 
 # Base Image
-FROM node:12.18.1 as build
+FROM node:12.18.1@sha256:2b85f4981f92ee034b51a3c8bb22dbb451d650d5c12b6439a169f8adc750e4b6 as build
 
 # Moving into working directory
 WORKDIR /app
@@ -20,7 +20,7 @@ RUN npm run build
 ###### PRODUCTION ENVIRONMENT ######
 
 # Base Image for prod env
-FROM nginx:stable-alpine
+FROM nginx:stable-alpine@sha256:2366ede62d2e26a20f7ce7d0294694fe52b166107fd346894e4658dfb5273f9c
 
 # Adding the build files from previous container to nginx/html
 COPY --from=build /app/build /usr/share/nginx/html
