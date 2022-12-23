@@ -1,5 +1,5 @@
 #Base Image
-FROM python:3.8
+FROM python:3.8@sha256:3a519327ab069a4e356a8aa279e80b7ef6270e17c5df1493dd0a5b281755e95a
 
 #Getting System Ready to install dependencies
 RUN apt-get clean \
